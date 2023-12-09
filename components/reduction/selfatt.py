@@ -2,7 +2,7 @@ import torch as t
 from torch import nn as nn
 from torch.nn import functional as F
 
-from utils.training import getMaskFromLens
+from util.training import getMaskFromLens
 
 
 class BiliAttnReduction(nn.Module):

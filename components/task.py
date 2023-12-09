@@ -7,9 +7,9 @@ import time
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 
 from components.samplers import EpisodeSamlper, ReptileSamlper
-from utils.magic import magicSeed, randomList
-from utils.training import getBatchSequenceFunc, batchSequenceWithoutPad
-from utils.profiling import FuncProfiler
+from util.magic import magicSeed, randomList
+from util.training import getBatchSequenceFunc, batchSequenceWithoutPad
+from util.profiling import FuncProfiler
 
 #########################################
 # 基于Episode训练的任务类，包含采样标签空间，
@@ -84,8 +84,8 @@ class EpisodeTask:
         query_loader = DataLoader(self.Dataset, batch_size=qk * n,
                                   sampler=query_sampler, collate_fn=batchSequenceWithoutPad)#getBatchSequenceFunc())
 
-        supports, support_labels, support_lens = support_loader.__iter__().next()
-        queries, query_labels, query_lens = query_loader.__iter__().next()
+        supports, support_labels, support_lens = next(support_loader.__iter__())
+        queries, query_labels, query_lens = next(query_loader.__iter__())
 
         # 将序列长度信息存储便于unpack
         self.SupSeqLenCache = support_lens
@@ -306,7 +306,7 @@ class ReptileEpisodeTask(EpisodeTask):
                                     sampler=support_sampler,
                                     collate_fn=batchSequenceWithoutPad)  # getBatchSequenceFunc())
 
-        supports, support_labels, support_lens = support_loader.__iter__().next()
+        supports, support_labels, support_lens = next(support_loader.__iter__())
 
         self.SupSeqLenCache = support_lens
 
@@ -315,7 +315,7 @@ class ReptileEpisodeTask(EpisodeTask):
                                       sampler=query_sampler,
                                       collate_fn=batchSequenceWithoutPad)  # getBatchSequenceFunc())
 
-            queries, query_labels, query_lens = query_loader.__iter__().next()
+            queries, query_labels, query_lens = next(query_loader.__iter__())
 
             self.QueSeqLenCache = query_lens
 
@@ -424,8 +424,8 @@ class ImageProtoEpisodeTask(EpisodeTask):
         support_loader = DataLoader(self.Dataset, batch_size=k * n, sampler=support_sampler)
         query_loader = DataLoader(self.Dataset, batch_size=qk * n, sampler=query_sampler)
 
-        supports, support_labels = support_loader.__iter__().next()
-        queries, query_labels = query_loader.__iter__().next()
+        supports, support_labels = next(support_loader.__iter__())
+        queries, query_labels = next(query_loader.__iter__())
 
         return supports, support_labels, queries, query_labels
 

@@ -1,7 +1,7 @@
 from torch.utils.data import Sampler
 import random as rd
 
-from utils.magic import magicSeed
+from util.magic import magicSeed
 
 #########################################
 # Episode训练的采样器。会根据选定的类空间和每

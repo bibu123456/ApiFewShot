@@ -6,7 +6,7 @@ import numpy as np
 from components.set2set.deepaffine import DeepAffine
 from components.sequence.CNN import CNNEncoder1D
 from components.sequence.LSTM import BiLstmEncoder
-from utils.training import extractTaskStructFromInput, repeatProtoToCompShape, repeatQueryToCompShape, protoDisAdapter
+from util.training import extractTaskStructFromInput, repeatProtoToCompShape, repeatQueryToCompShape, protoDisAdapter
 
 class AFEAT(nn.Module):
 

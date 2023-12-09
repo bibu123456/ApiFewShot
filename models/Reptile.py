@@ -7,7 +7,7 @@ from torch.optim.adam import Adam
 from components.reduction.selfatt import BiliAttnReduction
 from components.sequence.CNN import CNNEncoder1D
 from components.sequence.LSTM import BiLstmEncoder
-from utils.training import extractTaskStructFromInput, getMaskFromLens, splitMetaBatch
+from util.training import extractTaskStructFromInput, getMaskFromLens, splitMetaBatch
 
 def rename(name, token='-'):
     '''

@@ -4,11 +4,12 @@ import shutil
 import logging
 import time
 
+sys.path.append('../')
+
 from tqdm import tqdm
 
-from utils.file import deleteDir, loadJson, dumpJson
-from utils.manager import PathManager
-
+from util.file import deleteDir, loadJson, dumpJson
+from util.manager import PathManager
 ###########################################
 # 本函数用于将当前项目路径添加到扫描选项中以便可以
 # 导入其他模块。可以使用depth参数来调节运行路径相对

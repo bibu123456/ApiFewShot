@@ -11,7 +11,7 @@ from components.sequence.LSTM import BiLstmEncoder
 from components.reduction.selfatt import BiliAttnReduction
 from components.reduction.max import StepMaxReduce
 from components.sequence.TCN import TemporalConvNet
-from utils.training import extractTaskStructFromInput, repeatProtoToCompShape, repeatQueryToCompShape, protoDisAdapter
+from util.training import extractTaskStructFromInput, repeatProtoToCompShape, repeatQueryToCompShape, protoDisAdapter
 
 class FEAT(nn.Module):
 

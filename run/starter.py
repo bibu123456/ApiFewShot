@@ -9,8 +9,8 @@ from preliminaries.dataset import makeDataFile, makeDatasetDirStruct, splitDatas
     dumpDatasetSplitStruct, revertDatasetSplit, \
     deleteDatasetSplit, renameItemFolder
 from preliminaries.embedding import aggregateApiSequences
-from utils.file import loadJson, dumpJson
-from utils.manager import PathManager
+from util.file import loadJson, dumpJson
+from util.manager import PathManager
 from preliminaries.reshaping import makeMatrixData
 from preliminaries.preprocessing import apiStat, removeApiRedundance, statSatifiedClasses, \
                                     collectJsonByClass, mappingApiNormalize, filterApiSequence, \

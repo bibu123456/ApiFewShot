@@ -3,7 +3,7 @@ from torch.utils.data import Dataset
 import numpy as np
 import random as rd
 
-from utils.file import loadJson
+from util.file import loadJson
 
 #########################################
 # 基于已序列化的文件数据的数据集。数据集本身假设

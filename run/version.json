@@ -1,24 +1,23 @@
 {
     "-1": {
         "__version": -1,
-        "_dataset": "virushare-45-rmsub",
-        "_model": "ProtoNet",
-        "_time": "Sun Jul 12 15:13:02 2020",
+        "_dataset": "HKS",
+        "_model": "SIMPLE",
+        "_time": "Sat Dec  9 09:17:55 2023",
         "config": {
             "desc": [
                 "使用任务batch=2",
                 "使用300维度的GloVe初始化",
-                "qk改为15",
-                "序列长度为200使用了tfidf和移除了重复子串的3Gram(第3次分割)",
+                "序列长度为1000使用了tfidf的3Gram(最终分割)",
                 "提前终止的标准改为loss",
                 "修改了数据集的存储方式，使得数据集中所有向量都是以最大序列长度存储",
-                "使用1层BiLSTM编码，使用1dCNN解码",
+                "使用1层BiLSTM编码,使用1dCNN解码",
                 "不使用LayerNorm",
-                "使用Sigma"
+                "初始学习率设置为1e-3"
             ],
             "k": 5,
-            "n": 5,
-            "qk": 15
+            "n": 10,
+            "qk": 5
         }
     },
     "-2": {

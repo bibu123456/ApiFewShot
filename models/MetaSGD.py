@@ -6,7 +6,7 @@ from torch.optim.adam import Adam
 
 from components.sequence.CNN import CNNEncoder1D
 from components.sequence.LSTM import BiLstmEncoder
-from utils.training import extractTaskStructFromInput
+from util.training import extractTaskStructFromInput
 
 def rename(name, token='-'):
     '''

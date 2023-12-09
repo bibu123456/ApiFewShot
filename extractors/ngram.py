@@ -1,11 +1,11 @@
 import os
 from tqdm import tqdm
 
-from utils.file import loadJson, dumpJson
-from utils.apis import strlistToStr
-from utils.display import printBulletin, printState
+from util.file import loadJson, dumpJson
+from util.apis import strlistToStr
+from util.display import printBulletin, printState
 from preliminaries.embedding import aggregateApiSequences
-from utils.error import Reporter
+from util.error import Reporter
 
 def statNGram(parent_path, window=3,
               dict_save_path=None,          # NGram频率的保存

@@ -6,7 +6,7 @@ from torch.nn.utils.rnn import pad_packed_sequence, pack_padded_sequence
 from components.modules import NTN
 from components.sequence.CNN import CNNEncoder1D
 from components.sequence.LSTM import BiLstmEncoder
-from utils.training import dynamicRouting, \
+from util.training import dynamicRouting, \
                             extractTaskStructFromInput, \
                             repeatProtoToCompShape, \
                             repeatQueryToCompShape

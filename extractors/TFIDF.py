@@ -3,7 +3,7 @@ import numpy as np
 from sklearn.feature_extraction.text import TfidfTransformer
 from tqdm import tqdm
 
-from utils.file import loadJson, dumpJson
+from util.file import loadJson, dumpJson
 
 
 ##############################################

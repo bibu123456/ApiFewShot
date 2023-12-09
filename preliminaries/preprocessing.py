@@ -13,10 +13,10 @@ import shutil
 import numpy as np
 import random
 
-from utils.error import Reporter
-from utils.file import loadJson, dumpJson, dumpIterable
-from utils.display import printBulletin, printState
-from utils.manager import PathManager
+from util.error import Reporter
+from util.file import loadJson, dumpJson, dumpIterable
+from util.display import printBulletin, printState
+from util.manager import PathManager
 
 #####################################################
 # 本函数用于将Cuckoo报告中的api序列提取出来并存储到json文件中

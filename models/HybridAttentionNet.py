@@ -6,7 +6,7 @@ from components.modules import CNNBlock2D
 from components.sequence.CNN import CNNEncoder1D
 from components.sequence.LSTM import BiLstmEncoder
 from components.sequence.TCN import TemporalConvNet
-from utils.training import extractTaskStructFromInput
+from util.training import extractTaskStructFromInput
 
 class InstanceAttention(nn.Module):
     def __init__(self, linear_in, linear_out):

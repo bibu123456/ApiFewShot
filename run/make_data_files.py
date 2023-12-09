@@ -1,7 +1,7 @@
 # -*- coding: utf-8
 
 from preliminaries.dataset import makeDataFile
-from utils.manager import PathManager
+from util.manager import PathManager
 
 dataset_name = '...'
 item_per_family = 20

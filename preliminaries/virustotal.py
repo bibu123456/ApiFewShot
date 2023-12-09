@@ -6,7 +6,7 @@ import requests
 import sys
 import csv
 
-from utils.file import loadJson, dumpJson
+from util.file import loadJson, dumpJson
 
 scan_url = 'https://www.virustotal.com/vtapi/v2/file/scan'
 report_url = 'https://www.virustotal.com/vtapi/v2/file/report'

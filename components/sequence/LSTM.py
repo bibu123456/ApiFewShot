@@ -10,7 +10,7 @@ from components.reduction.selfatt import BiliAttnReduction
 # 双向LTSM并支持自注意力的序列解码器。返回一个
 # 由双向序列隐藏态自注意力对齐得到的编码向量。
 #########################################
-from utils.training import getMaskFromLens
+from util.training import getMaskFromLens
 
 
 class BiLstmEncoder(nn.Module):

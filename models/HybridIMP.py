@@ -4,7 +4,7 @@ import numpy as np
 
 from components.sequence.LSTM import BiLstmEncoder, BiLstmCellEncoder
 from components.sequence.CNN import CNNEncoder1D
-from utils.training import extractTaskStructFromInput
+from util.training import extractTaskStructFromInput
 
 
 class HybridIMP(nn.Module):

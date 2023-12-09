@@ -6,9 +6,9 @@ import numpy as np
 import random as rd
 
 from preliminaries.dataset import makeDatasetDirStruct
-from utils.error import Reporter
-from utils.file import loadJson, dumpJson
-from utils.magic import magicSeed
+from util.error import Reporter
+from util.file import loadJson, dumpJson
+from util.magic import magicSeed
 
 ######################################################
 # 将已有的json数据集中的数据全部收集复制到一个文件夹中

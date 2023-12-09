@@ -10,11 +10,11 @@ from torch.nn.utils.rnn import pad_sequence
 
 from os.path import join as pj
 
-from utils.error import Reporter
-from utils.file import loadJson, dumpJson
-from utils.display import printState
-from utils.manager import PathManager
-from utils.magic import magicSeed, sample
+from util.error import Reporter
+from util.file import loadJson, dumpJson
+from util.display import printState
+from util.manager import PathManager
+from util.magic import magicSeed, sample
 
 magic = 7355608
 

@@ -3,7 +3,7 @@ import logging
 from components.modules import *
 from components.sequence.CNN import CNNEncoder1D
 from components.sequence.LSTM import BiLstmEncoder, BiLstmCellEncoder
-from utils.training import extractTaskStructFromInput, \
+from util.training import extractTaskStructFromInput, \
                             repeatProtoToCompShape, \
                             repeatQueryToCompShape, \
                             protoDisAdapter

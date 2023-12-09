@@ -1,7 +1,7 @@
 import torch as t
 import torch.nn as nn
 
-from utils.training import getMaskFromLens
+from util.training import getMaskFromLens
 
 class StepMaxReduce(nn.Module):
 

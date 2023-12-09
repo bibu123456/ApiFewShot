@@ -8,7 +8,7 @@ from components.reduction.selfatt import BiliAttnReduction
 from components.sequence.CNN import CNNEncoder1D
 from components.sequence.LSTM import BiLstmEncoder
 from components.sequence.TCN import TemporalConvNet
-from utils.training import extractTaskStructFromInput, getMaskFromLens, \
+from util.training import extractTaskStructFromInput, getMaskFromLens, \
                             collectParamsFromStateDict
 
 def rename(name, token='-'):

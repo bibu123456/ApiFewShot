@@ -1,6 +1,6 @@
 from components.modules import *
 from components.sequence.CNN import CNNEncoder1D
-from utils.training import extractTaskStructFromInput, \
+from util.training import extractTaskStructFromInput, \
                             repeatProtoToCompShape, \
                             repeatQueryToCompShape, \
                             protoDisAdapter

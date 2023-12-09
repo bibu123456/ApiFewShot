@@ -12,10 +12,10 @@ sys.path.append('../')
 # 先添加路径再获取
 
 from components.task import *
-from utils.manager import TrainingConfigManager, PathManager, TestStatManager
+from util.manager import TrainingConfigManager, PathManager, TestStatManager
 from components.datasets import SeqFileDataset, ImageFileDataset
-from utils.display import printState
-from utils.stat import statParamNumber
+from util.display import printState
+from util.stat import statParamNumber
 from components.procedure import *
 
 from models.ProtoNet import ProtoNet

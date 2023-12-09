@@ -2,10 +2,10 @@ import torch as t
 import torch.nn as nn
 import torch.nn.functional as F
 import math
-
+from components.sequence.CNN import CNNBlock1D
 from components.sequence.LSTM import BiLstmEncoder
-from utils.matrix import batchDot
-from utils.training import getMaskFromLens
+from util.matrix import batchDot
+from util.training import getMaskFromLens
 
 
 #########################################
@@ -35,8 +35,7 @@ class SelfAttention(nn.Module):
     def forward(self, x):
         packed = isinstance(x, t.nn.utils.rnn.PackedSequence)
         if packed:
-            x, lens = nn.utils.rnn.pad_packed_sequence(x, batch_first=True)
-
+            x, lens = nn.utils.rnn.pad_packed_sequence(x, valid_frames.to('cpu'), batch_first=True, enforce_sorted=True)
             mask = getMaskFromLens(lens)
             # max_idx = lens[0]
             # batch_size = len(lens)
@@ -70,6 +69,7 @@ class SelfAttention(nn.Module):
 
 ##########################################################
 # 带有残差连接的
+
 ##########################################################
 class ResInception(nn.Module):
 
@@ -275,7 +275,7 @@ class CNNEncoder(nn.Module):
         if pools is None:
             pools = [True]*(len(channels)-1)
 
-        layers = nn.ModuleList([CNNBlock(in_feature=channels[i],
+        layers = nn.ModuleList([CNNBlock1D(in_feature=channels[i],
                            out_feature=channels[i+1],
                            stride=strides[i],
                            relu=relus[i],

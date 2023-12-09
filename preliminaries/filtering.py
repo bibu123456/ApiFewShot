@@ -3,12 +3,12 @@ from sklearn.decomposition import PCA
 import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans, AffinityPropagation
 
-from utils.color import getRandomColor
+from util.color import getRandomColor
 from preliminaries.embedding import aggregateApiSequences, trainW2Vmodel
 from preliminaries.preprocessing import mappingApiNormalize, \
     apiStat, removeApiRedundance, filterApiSequence, statApiFrequency
-from utils.file import loadJson, dumpJson
-from utils.display import printState
+from util.file import loadJson, dumpJson
+from util.display import printState
 
 base_path = 'D:/peimages/PEs/virushare_20/'
 path = base_path + 'jsons/'

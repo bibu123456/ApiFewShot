@@ -2,9 +2,9 @@ import os
 import numpy as np
 from tqdm import tqdm
 
-from utils.file import loadJson, dumpJson
-from utils.display import printBulletin
-from utils.manager import PathManager
+from util.file import loadJson, dumpJson
+from util.display import printBulletin
+from util.manager import PathManager
 
 from gensim.models.word2vec import Word2Vec
 

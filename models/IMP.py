@@ -6,7 +6,7 @@ from components.reduction.max import StepMaxReduce
 from components.sequence.LSTM import BiLstmEncoder, BiLstmCellEncoder
 from components.sequence.CNN import CNNEncoder1D
 from components.sequence.transformer import MultiHeadAttention, TransformerEncoder
-from utils.training import extractTaskStructFromInput
+from util.training import extractTaskStructFromInput
 
 
 class IMP(nn.Module):

@@ -7,8 +7,8 @@ from components.sequence.LSTM import BiLstmEncoder, BiLstmCellEncoder
 from components.reduction.max import StepMaxReduce
 from components.sequence.TCN import TemporalConvNet
 from components.sequence.transformer import TransformerEncoder, MultiHeadAttention
-from utils.profiling import FuncProfiler
-from utils.training import extractTaskStructFromInput, \
+from util.profiling import FuncProfiler
+from util.training import extractTaskStructFromInput, \
                             repeatProtoToCompShape, \
                             repeatQueryToCompShape, \
                             protoDisAdapter

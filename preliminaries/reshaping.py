@@ -4,8 +4,8 @@ import torch as t
 from sklearn.decomposition import PCA
 from tqdm import tqdm
 
-from utils.manager import PathManager
-from utils.matrix import matMulReduce
+from util.manager import PathManager
+from util.matrix import matMulReduce
 
 #########################################################
 # 本函数输入词语矩阵，使用降维方法输出1维降维结果

@@ -2,38 +2,40 @@ import os
 import sys
 import shutil
 import torch as t
-
-sys.path.append('../')
-
+import numpy as np
+os.getcwd() 
 from config import saveConfigFile, checkVersion, saveRunVersionConfig
-
-################################################
-#----------------------设置系统基本信息------------------
-################################################
-# appendProjectPath(depth=1)
-
-
 # 先添加路径再获取
-from utils.manager import TrainingConfigManager
+from util.manager import TrainingConfigManager
 
 cfg = TrainingConfigManager('runConfig.json')
 datasetBasePath = cfg.systemParams()
-os.environ["CUDA_VISIBLE_DEVICES"] = str(cfg.deviceId())
-device = t.device(f"cuda:{cfg.deviceId()}")
+os.environ["CUDA_VISIBLE_DEVICES"] = "0"
+# Check if CUDA is available
+if t.cuda.is_available():
+    # Get the list of available GPU devices
+    available_devices = list(range(t.cuda.device_count()))
 
+    # Choose the GPU device using the specified CUDA device ID
+    device_id = cfg.deviceId()
+    if device_id in available_devices:
+        device = t.device(f"cuda:{device_id}")
+    else:
+        # If the specified device ID is not valid, fall back to using the first available GPU
+        device = t.device("cuda:0")
+    
 sys.setrecursionlimit(5000)                         # 增加栈空间防止意外退出
 
-import torch as t
-import numpy as np
+
 
 from components.task import *
-from utils.manager import PathManager, TrainStatManager
-from utils.plot import VisdomPlot, plotLine
+from util.manager import PathManager, TrainStatManager
+from util.plot import VisdomPlot, plotLine
 from components.datasets import SeqFileDataset, ImageFileDataset
-from utils.init import LstmInit
-from utils.display import printState
-from utils.stat import statParamNumber
-from utils.file import deleteDir
+from util.init import LstmInit
+from util.display import printState
+from util.stat import statParamNumber
+from util.file import deleteDir
 from components.procedure import *
 
 from models.ProtoNet import ProtoNet, ImageProtoNet, IncepProtoNet, CNNLstmProtoNet
@@ -51,10 +53,6 @@ from models.NnNet import NnNet
 from models.IMP import IMP
 from models.SIMPLE import SIMPLE
 from models.HybridIMP import HybridIMP
-
-################################################
-#----------------------读取参数------------------
-################################################
 
 from models.mconfig import ADAPTED_MODELS, IMP_MODELS
 
@@ -308,9 +306,9 @@ scheduler = t.optim.lr_scheduler.StepLR(optimizer,
                                          gamma=LRDecayGamma)
 
 
-# if modelParams['data_parallel'] is not None:
-#     model = t.nn.DataParallel(model,
-#                               device_ids=modelParams["data_parallel_devices"])
+if modelParams['data_parallel'] is not None:
+    model = t.nn.DataParallel(model,
+                              device_ids=modelParams["data_parallel_devices"])
 
 ################################################
 #----------------------训练------------------
