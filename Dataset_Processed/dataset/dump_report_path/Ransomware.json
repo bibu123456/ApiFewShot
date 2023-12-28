@@ -1,0 +1,10 @@
+{
+    "errors": {
+        "VirusShare_76b640aa00354e46b29ca7ac2adfd732": "api length of 0",
+        "VirusShare_b024d75fd2b77bb5dd1c70051b34e133": "api length of 0",
+        "VirusShare_d4b649fa835be5c08224c91ce20d8365": "api length of 0"
+    },
+    "warnings": {
+        "VirusShare_98b582a9ea877a60a74bd8801e47984c": "api length of 4"
+    }
+}

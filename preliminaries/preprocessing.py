@@ -583,8 +583,8 @@ if __name__ == '__main__':
 
     # removeNotExistItem(index_path='/home/asichurter/datasets/PEs/wudi/unziped/',
     #                    item_path='/home/asichurter/datasets/PEs/wudi/result/')
-
-    # extractApiFromJson()
+    path = 'D:\CreateDatasets\data'
+    extractApiFromJson(path)
 
     # extractApiFromJson(path)
 

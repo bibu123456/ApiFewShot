@@ -3,7 +3,7 @@
         "__version": -1,
         "_dataset": "HKS",
         "_model": "SIMPLE",
-        "_time": "Sat Dec  9 09:17:55 2023",
+        "_time": "Wed Dec 27 17:24:21 2023",
         "config": {
             "desc": [
                 "使用任务batch=2",
