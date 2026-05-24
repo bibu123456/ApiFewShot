@@ -1,0 +1,9 @@
+merge_protections:
+  - name: Merge during working hours
+    description: Make sure to merge only during working hours
+    if:
+      - base = main
+    success_conditions:
+      - schedule = Mon-Fri 09:00-17:00[America/Chicago]
+merge_protections_settings:
+  auto_merge_conditions: true
