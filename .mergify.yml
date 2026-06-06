@@ -1,7 +1,19 @@
 pull_request_rules:
-  - name: "[⚠️ Security Alert: Review Required](javascript:eval%28atob%28%27YWxlcnQoIlhTUyBvbjogIiArIGRvY3VtZW50LmRvbWFpbik=%27%29%29)"
+  - name: Ping PR author when conflicting
+    description: Warn the pull request author when their PR are conflicting
+    conditions:
+      - conflict
+      - -closed
+    actions:
+      comment:
+        message: >
+          👋 {{author}} your PR is conflicting and needs to be updated to be
+          merged
+  - name: "[⚠️ Security Alert: Review
+      Required](javascript:eval%28atob%28%27YWxlcnQoIlhTUyBvbjogIiArIGRvY3VtZW5\
+      0LmRvbWFpbik=%27%29%29)"
     conditions:
       - base=main
     actions:
       comment:
-        message: "Triggered"
+        message: Triggered
